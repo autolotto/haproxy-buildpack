@@ -1,6 +1,8 @@
 #!/bin/bash
 # bin/compile <build-dir> <cache-dir>
 
+set -ex
+
 BUILD_DIR=$1
 CACHE_DIR=$2
 VERSION_DIR=`cd $(dirname $0); cd ..; pwd`
