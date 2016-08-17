@@ -21,7 +21,7 @@ get_source() {
     echo "Don't need to download, already exists"
   else
     echo "Downloading $VERSION..."
-    curl $VERSION -o $CACHE_DIR/$ARCHIVE
+    curl -L $VERSION -o $CACHE_DIR/$ARCHIVE
   fi
 }
 
