@@ -9,7 +9,6 @@ VERSION_DIR=`cd $(dirname $0); cd ..; pwd`
 VERSION=`cat $VERSION_DIR/VERSION | sed 's/[\r\n]*$//'`
 ARCHIVE=`basename $VERSION`
 ARCHIVE_DIR=`echo $ARCHIVE | sed 's/\.tar\.gz$//'`
-USE_OPENSSL=1
 
 
 get_source() {
@@ -39,7 +38,7 @@ compile_source() {
   if [ ! -f $CACHE_DIR/$ARCHIVE_DIR/haproxy ]; then
     echo "Compiling $ARCHIVE_DIR..."
     cd $CACHE_DIR/$ARCHIVE_DIR
-    make TARGET=linux2628
+    make TARGET=linux2628 USE_OPENSSL=1
   fi
 }
 
