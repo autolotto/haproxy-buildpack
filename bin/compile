@@ -9,6 +9,8 @@ VERSION_DIR=`cd $(dirname $0); cd ..; pwd`
 VERSION=`cat $VERSION_DIR/VERSION | sed 's/[\r\n]*$//'`
 ARCHIVE=`basename $VERSION`
 ARCHIVE_DIR=`echo $ARCHIVE | sed 's/\.tar\.gz$//'`
+USE_OPENSSL=1
+
 
 get_source() {
   if [ ! -d $CACHE_DIR ]; then
